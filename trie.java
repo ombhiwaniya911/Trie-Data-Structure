@@ -42,6 +42,12 @@ class Trie {
     }
 
     public void erase(int x, int y) {
+         int available = count(x); // implement a count method
+         if (available < y) {
+           y = available; // only erase what exists
+         }
+
+
         Node cur = root;
         for (int i = N; i >= 0; i--) {
             int bit = ((x & (1 << i)) != 0) ? 1 : 0;
