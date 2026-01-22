@@ -42,9 +42,9 @@ class Trie {
     }
 
     public void erase(int x, int y) {
-         int available = count(x); // implement a count method
+         int available = count(x); 
          if (available < y) {
-           y = available; // only erase what exists
+           y = available; 
          }
 
 
