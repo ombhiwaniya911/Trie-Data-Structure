@@ -43,6 +43,7 @@ class Trie {
 
     public void erase(int x, int y) {
          int available = count(x); 
+         if (available == 0) return;
          if (available < y) {
            y = available; 
          }
