@@ -25,6 +25,7 @@ class Trie {
     }
 
     public void insert(int x, int y) {
+           root.count += y;
         Node cur = root;
         for (int i = N; i >= 0; i--) {
             int bit = ((x & (1 << i)) != 0) ? 1 : 0;
@@ -47,7 +48,7 @@ class Trie {
          if (available < y) {
            y = available; 
          }
-
+           root.count -= y;
 
         Node cur = root;
         for (int i = N; i >= 0; i--) {
@@ -74,6 +75,9 @@ class Trie {
     }
 
     public int findSmallest(int k) {
+        if (k <= 0 || k > root.count)
+    throw new IllegalArgumentException("Invalid k");
+
         int ans = 0;
         Node cur = root;
 
